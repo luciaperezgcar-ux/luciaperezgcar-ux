@@ -3,346 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Lucía</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Lucía | Portfolio</title>
+
+    <!-- TIPOGRAFÍA -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ==== ESTILOS CSS COMPLETOS ==== -->
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #ffe9f4;
+        color: #444;
+    }
+
+    /* ==== NAVBAR ==== */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        background: rgba(255, 200, 230, 0.6);
+        backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 40px;
+        z-index: 1000;
+        color: #d63384;
+    }
+
+    .menu a {
+        margin-left: 20px;
+        color: #d63384;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .menu a:hover {
+        color: #ff6fbd;
+        transform: scale(1.1);
+    }
+
+    /* ==== HERO ==== */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, #ffb6d9, #ffd6ea, #ffe9f6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .hero-box {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(20px);
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px #ffb6d973;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        color: #d63384;
+    }
+
+    .hero h1 span {
+        color: #ff5ea8;
+    }
+
+    .hero p {
+        margin-top: 10px;
+        color: #704264;
+        font-size: 1.1rem;
+    }
+
+    /* ==== BOTONES ==== */
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        background: #ff75c6;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 6px 12px rgba(255, 110, 180, 0.4);
+    }
+
+    .btn:hover {
+        background: #ff4fab;
+        transform: scale(1.07);
+    }
+
+    .btn-small {
+        background: #ff8fd6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 10px;
+    }
+
+    .btn-small:hover {
+        background: #ff5ebc;
+        transform: translateY(-3px);
+    }
+
+    /* ==== SOBRE MÍ ==== */
+    .sobre {
+        padding: 100px 10%;
+    }
+
+    .sobre h2 {
+        text-align: center;
+        color: #d63384;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .sobre-contenido {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foto {
+        width: 320px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(255, 120, 180, 0.4);
+        animation: float 4s infinite ease-in-out;
+    }
+
+    .texto p {
+        font-size: 1.1rem;
+        color: #704264;
+        max-width: 500px;
+    }
+
+    .skills span {
+        display: inline-block;
+        margin: 7px;
+        background: #ffd2ea;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #c2185b;
+        box-shadow: 0 4px 10px rgba(255, 140, 190, 0.3);
+    }
+
+    /* ==== PORTAFOLIO ==== */
+    .portfolio {
+        padding: 100px 10%;
+    }
+
+    .portfolio h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #d63384;
+        margin-bottom: 40px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 20px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(255, 150, 200, 0.3);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.03);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    /* ==== CONTACTO ==== */
+    .contacto {
+        padding: 100px 10%;
+        text-align: center;
+    }
+
+    .contacto h2 {
+        font-size: 2.5rem;
+        color: #d63384;
+        margin-bottom: 30px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #ff9ece;
+        margin-bottom: 15px;
+        background: #fff5fa;
+    }
+
+    textarea {
+        height: 120px;
+        resize: none;
+    }
+
+    .social a {
+        margin: 10px;
+        color: #ff4dbc;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .social a:hover {
+        color: #ff128a;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+        padding: 20px;
+        text-align: center;
+        background: #ffb6d9;
+        color: white;
+    }
+
+    /* ==== ANIMACIONES ==== */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 15px 20px;
+        }
+
+        .menu a {
+            margin-left: 10px;
+        }
+
+        .hero-box {
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <header>
-        <div class="logo">Lucía</div>
-        <nav>
+    <!-- NAV -->
+    <header class="navbar">
+        <div class="logo">Lucía 🌸</div>
+        <nav class="menu">
             <a href="#inicio">Inicio</a>
             <a href="#sobre-mi">Sobre mí</a>
-            <a href="#portafolio">Portafolio</a>
+            <a href="#portafolio">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Hola, soy <span>Lucía</span></h1>
-            <p>Creativa, empática y amante de los perritos 🐶✨</p>
-            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        <div class="hero-box">
+            <h1>Hola, soy <span>Lucía</span> 💗</h1>
+            <p>Creativa • Empática • Amante de los perros 🐶, la Navidad 🎄 y el sushi 🍣</p>
+            <a href="#portafolio" class="btn">Explorar mi trabajo</a>
         </div>
     </section>
 
-    <!-- ===== SOBRE MI ===== -->
-    <section id="sobre-mi" class="sobre-mi">
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="sobre">
         <h2>Sobre mí</h2>
+
         <div class="sobre-contenido">
-            <img src="https://via.placeholder.com/300x300" alt="Foto de Lucía">
+            <img class="foto" src="https://via.placeholder.com/350x350" alt="Lucía">
+
             <div class="texto">
                 <p>
-                    ¡Hola! Soy <strong>Lucía</strong>, tengo <strong>15 años</strong> y me considero una
-                    persona <strong>creativa, empática y muy soñadora</strong>.
-                    Me encantan los <strong>perros</strong>, la <strong>Navidad</strong> es mi época favorita del año
-                    y el <strong>sushi</strong> es definitivamente mi comida favorita 🍣🎀.
+                    Soy <strong>Lucía</strong>, tengo <strong>15 años</strong> y me encanta expresarme mediante colores,
+                    diseños y creatividad.  
+                    Soy una persona <strong>muy creativa, empática y sensible</strong>.  
+                    Amo los <strong>perritos</strong>, la <strong>Navidad</strong> es mi época favorita y el <strong>sushi</strong> es lo mejor del mundo 🍣💗.
                 </p>
 
-                <h3>Mis habilidades</h3>
-                <ul>
-                    <li>Creatividad</li>
-                    <li>Diseño básico</li>
-                    <li>Empatía y comunicación</li>
-                    <li>Trabajo en equipo</li>
-                </ul>
+                <div class="skills">
+                    <span>Creatividad</span>
+                    <span>Empatía</span>
+                    <span>Diseño</span>
+                    <span>Trabajo en equipo</span>
+                    <span>Organización</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PORTAFOLIO ===== -->
-    <section id="portafolio" class="portafolio">
+    <!-- PORTAFOLIO -->
+    <section id="portafolio" class="portfolio">
         <h2>Mis Proyectos</h2>
-        <div class="grid-portafolio">
 
-            <!-- Proyecto 1 -->
+        <div class="grid">
+
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/ffc9e8/ffffff" alt="Proyecto 1">
+                <img src="https://via.placeholder.com/400x250/ffcce7/ffffff" alt="">
                 <h3>Proyecto 1</h3>
-                <p>Diseño simple en tonos rositas, inspirado en mis gustos.</p>
-                <a href="#" class="btn-small">Ver más</a>
+                <button class="btn-small">Ver más</button>
             </div>
 
-            <!-- Proyecto 2 -->
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/ffb2da/ffffff" alt="Proyecto 2">
+                <img src="https://via.placeholder.com/400x250/ffb8df/ffffff" alt="">
                 <h3>Proyecto 2</h3>
-                <p>Página temática navideña 🎄 hecha con cariño.</p>
-                <a href="#" class="btn-small">Ver más</a>
+                <p>Un proyecto navideño mágico y lleno de brillo 🎄✨.</p>
+                <button class="btn-small">Ver más</button>
             </div>
 
-            <!-- Proyecto 3 -->
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/ffdaf0/ffffff" alt="Proyecto 3">
+                <img src="https://via.placeholder.com/400x250/fdd2ea/ffffff" alt="">
                 <h3>Proyecto 3</h3>
-                <p>Galería dedicada a mis animales favoritos.</p>
-                <a href="#" class="btn-small">Ver más</a>
+                <p>Galería con fotos adorables de mis animalitos favoritos 🐶💗.</p>
+                <button class="btn-small">Ver más</button>
             </div>
 
-            <!-- Proyecto 4 -->
             <div class="card">
-                <img src="https://via.placeholder.com/400x250/ffc0dd/ffffff" alt="Proyecto 4">
+                <img src="https://via.placeholder.com/400x250/ff9fcc/ffffff" alt="">
                 <h3>Proyecto 4</h3>
-                <p>Diseño inspirado en el sushi 🍣 que tanto me gusta.</p>
-                <a href="#" class="btn-small">Ver más</a>
+                <p>Diseño inspirado en sushi kawaii 🍣🌸.</p>
+                <button class="btn-small">Ver más</button>
             </div>
 
         </div>
     </section>
 
-    <!-- ===== CONTACTO ===== -->
+    <!-- CONTACTO -->
     <section id="contacto" class="contacto">
         <h2>Contacto</h2>
+
         <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Escribe tu mensaje..." required></textarea>
+            <button class="btn" type="submit">Enviar</button>
         </form>
 
-        <div class="redes">
+        <div class="social">
             <a href="#">🌸 Instagram</a>
             <a href="#">⭐ TikTok</a>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>© 2025 Lucía | Todos los derechos reservados.</p>
+        <p>© 2025 Lucía | Creado con mucho 💗</p>
     </footer>
 
 </body>
 </html>
 
-/* ========================= */
-/* ESTILOS GENERALES */
-/* ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #ffe6f2; /* rosita claro */
-    color: #4a4a4a;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #d63384;
-}
-
-/* ========================= */
-/* NAVBAR */
-/* ========================= */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: rgba(255, 182, 193, 0.8);
-    color: #fff;
-    z-index: 100;
-}
-
-header nav a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    color: #ff8ac5;
-}
-
-/* ========================= */
-/* HERO */
-/* ========================= */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600')
-        center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-    text-align: center;
-    background-color: #ffd6e8;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: #d63384;
-}
-
-.hero span {
-    color: #ff5fa2;
-}
-
-.hero p {
-    color: #fff;
-    font-size: 1.2rem;
-    margin: 10px 0 20px;
-}
-
-.btn {
-    padding: 12px 25px;
-    background: #ff8ac5;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #ff5fa2;
-}
-
-/* ========================= */
-/* SOBRE MÍ */
-/* ========================= */
-.sobre-mi {
-    padding: 80px 10%;
-    background: #fff0f6;
-}
-
-.sobre-contenido {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-}
-
-.sobre-contenido img {
-    width: 280px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.sobre-contenido .texto ul {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-/* ========================= */
-/* PORTAFOLIO */
-/* ========================= */
-.portafolio {
-    padding: 80px 10%;
-}
-
-.grid-portafolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(255, 150, 200, 0.3);
-    transition: transform .3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.btn-small {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 20px;
-    background: #ff8ac5;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-}
-
-.btn-small:hover {
-    background: #ff5fa2;
-}
-
-/* ========================= */
-/* CONTACTO */
-/* ========================= */
-.contacto {
-    padding: 80px 10%;
-    background: #ffd9ec;
-    text-align: center;
-}
-
-form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-form input,
-form textarea {
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ff8ac5;
-}
-
-form button {
-    padding: 12px;
-    background: #ff8ac5;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #ff5fa2;
-}
-
-.redes a {
-    margin: 10px;
-    text-decoration: none;
-    color: #d63384;
-    font-weight: bold;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #ffb6c1;
-    color: #fff;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    header nav {
-        display: none;
-    }
-}
