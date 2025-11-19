@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <div class="logo">MiLogo</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Hola, soy <span>Tu Nombre</span></h1>
+            <p>Desarrollador Web | Diseñador UI/UX | Freelancer</p>
+            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE MI ===== -->
+    <section id="sobre-mi" class="sobre-mi">
+        <h2>Sobre mí</h2>
+        <div class="sobre-contenido">
+            <img src="https://via.placeholder.com/300x300" alt="Foto personal">
+            <div class="texto">
+                <p>
+                    Soy un profesional apasionado por la tecnología, con experiencia en desarrollo web,
+                    diseño y creación de soluciones digitales innovadoras. Me gusta trabajar en proyectos
+                    que generen impacto y aporten valor.
+                </p>
+
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>Diseño UI / UX</li>
+                    <li>Responsive Design</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTAFOLIO ===== -->
+    <section id="portafolio" class="portafolio">
+        <h2>Proyectos</h2>
+        <div class="grid-portafolio">
+
+            <!-- Proyecto 1 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Página web moderna creada con HTML, CSS y JavaScript.</p>
+                <a href="#" class="btn-small">Ver más</a>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Aplicación responsive con diseño profesional y limpio.</p>
+                <a href="#" class="btn-small">Ver más</a>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Sitio web corporativo con enfoque visual elegante.</p>
+                <a href="#" class="btn-small">Ver más</a>
+            </div>
+
+            <!-- Proyecto 4 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" alt="Proyecto 4">
+                <h3>Proyecto 4</h3>
+                <p>Plataforma interactiva creada para gestión de tareas.</p>
+                <a href="#" class="btn-small">Ver más</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="redes">
+            <a href="#">🔗 LinkedIn</a>
+            <a href="#">💻 GitHub</a>
+            <a href="#">📷 Instagram</a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 Mi Portafolio | Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+/* ========================= */
+/* ESTILOS GENERALES */
+/* ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    z-index: 100;
+}
+
+header nav a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #00c3ff;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1600')
+        center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero span {
+    color: #00c3ff;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #00c3ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0088b3;
+}
+
+/* ========================= */
+/* SOBRE MÍ */
+/* ========================= */
+.sobre-mi {
+    padding: 80px 10%;
+    background: #fff;
+}
+
+.sobre-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-contenido img {
+    width: 280px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.sobre-contenido .texto ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+/* ========================= */
+/* PORTAFOLIO */
+/* ========================= */
+.portafolio {
+    padding: 80px 10%;
+}
+
+.grid-portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: #00c3ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-small:hover {
+    background: #0088b3;
+}
+
+/* ========================= */
+/* CONTACTO */
+/* ========================= */
+.contacto {
+    padding: 80px 10%;
+    background: #eef7ff;
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 12px;
+    background: #00c3ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0088b3;
+}
+
+.redes a {
+    margin: 10px;
+    text-decoration: none;
+    color: #00c3ff;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    header nav {
+        display: none; /* Simple versión móvil */
+    }
+}
