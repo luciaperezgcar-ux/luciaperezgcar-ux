@@ -5,54 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucía | Portfolio</title>
 
-    <!-- TIPOGRAFÍA -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- ==== ESTILOS CSS COMPLETOS ==== -->
+    <!-- ======================= ESTILOS ======================= -->
     <style>
+
+    :root {
+        --rosa1: #ffd1e8;
+        --rosa2: #ffb3d9;
+        --rosa3: #ff8ccf;
+        --rosa4: #ff6ebb;
+        --texto-oscuro: #7a466e;
+        --blanco: #fff;
+    }
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
     }
 
     body {
-        font-family: "Poppins", sans-serif;
-        background: #ffe9f4;
-        color: #444;
+        background: linear-gradient(135deg, var(--rosa1), var(--rosa2));
+        min-height: 100vh;
     }
 
-    /* ==== NAVBAR ==== */
+    /* ================= NAVBAR ================= */
     .navbar {
         position: fixed;
         width: 100%;
-        background: rgba(255, 200, 230, 0.6);
-        backdrop-filter: blur(12px);
+        padding: 18px 40px;
         display: flex;
         justify-content: space-between;
-        padding: 15px 40px;
+        align-items: center;
+        background: rgba(255, 170, 210, 0.45);
+        backdrop-filter: blur(12px);
         z-index: 1000;
-        color: #d63384;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--rosa4);
     }
 
     .menu a {
-        margin-left: 20px;
-        color: #d63384;
-        font-weight: 600;
+        margin-left: 25px;
         text-decoration: none;
+        font-weight: 600;
+        color: var(--rosa4);
         transition: 0.3s;
     }
 
     .menu a:hover {
-        color: #ff6fbd;
-        transform: scale(1.1);
+        color: var(--rosa3);
+        transform: scale(1.12);
     }
 
-    /* ==== HERO ==== */
+    /* ================= HERO ================= */
     .hero {
         height: 100vh;
-        background: linear-gradient(135deg, #ffb6d9, #ffd6ea, #ffe9f6);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -61,134 +76,122 @@
     }
 
     .hero-box {
-        background: rgba(255, 255, 255, 0.35);
-        backdrop-filter: blur(20px);
-        padding: 50px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px #ffb6d973;
-        animation: fadeIn 1.2s ease-in-out;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(18px);
+        padding: 55px 45px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(255, 130, 185, 0.5);
+        animation: fadeIn 1.3s ease;
     }
 
     .hero h1 {
         font-size: 3rem;
-        color: #d63384;
+        font-weight: 700;
+        color: var(--rosa4);
     }
 
-    .hero h1 span {
-        color: #ff5ea8;
+    .hero span {
+        color: var(--rosa3);
     }
 
     .hero p {
-        margin-top: 10px;
-        color: #704264;
-        font-size: 1.1rem;
+        margin-top: 12px;
+        font-size: 1.2rem;
+        color: var(--texto-oscuro);
     }
 
-    /* ==== BOTONES ==== */
     .btn {
-        display: inline-block;
-        margin-top: 20px;
-        background: #ff75c6;
-        color: white;
-        padding: 12px 28px;
+        margin-top: 25px;
+        background: var(--rosa3);
+        color: var(--blanco);
+        padding: 14px 30px;
+        font-size: 1rem;
         border-radius: 30px;
-        font-weight: 600;
         text-decoration: none;
+        display: inline-block;
         transition: 0.3s;
-        box-shadow: 0 6px 12px rgba(255, 110, 180, 0.4);
+        box-shadow: 0 8px 20px rgba(255, 120, 190, 0.5);
     }
 
     .btn:hover {
-        background: #ff4fab;
-        transform: scale(1.07);
+        background: var(--rosa4);
+        transform: scale(1.08);
     }
 
-    .btn-small {
-        background: #ff8fd6;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: 0.3s;
-        margin-top: 10px;
-    }
-
-    .btn-small:hover {
-        background: #ff5ebc;
-        transform: translateY(-3px);
-    }
-
-    /* ==== SOBRE MÍ ==== */
+    /* ================= SOBRE MI ================= */
     .sobre {
-        padding: 100px 10%;
+        padding: 120px 10%;
     }
 
     .sobre h2 {
+        font-size: 2.6rem;
         text-align: center;
-        color: #d63384;
-        font-size: 2.5rem;
-        margin-bottom: 40px;
+        color: var(--rosa4);
+        margin-bottom: 50px;
     }
 
     .sobre-contenido {
         display: flex;
-        flex-wrap: wrap;
         gap: 40px;
-        align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
     }
 
     .foto {
-        width: 320px;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(255, 120, 180, 0.4);
+        width: 330px;
+        border-radius: 25px;
+        box-shadow: 0 10px 25px rgba(255, 120, 190, 0.5);
         animation: float 4s infinite ease-in-out;
     }
 
     .texto p {
-        font-size: 1.1rem;
-        color: #704264;
         max-width: 500px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--texto-oscuro);
+    }
+
+    .skills {
+        margin-top: 20px;
     }
 
     .skills span {
         display: inline-block;
-        margin: 7px;
-        background: #ffd2ea;
-        padding: 8px 15px;
+        background: #ffe0f1;
+        padding: 10px 18px;
+        margin: 6px;
         border-radius: 20px;
-        font-size: 0.9rem;
         font-weight: 600;
-        color: #c2185b;
-        box-shadow: 0 4px 10px rgba(255, 140, 190, 0.3);
+        color: var(--rosa4);
+        box-shadow: 0 4px 10px rgba(255, 150, 200, 0.4);
     }
 
-    /* ==== PORTAFOLIO ==== */
+    /* ================= PORTAFOLIO ================= */
     .portfolio {
-        padding: 100px 10%;
+        padding: 120px 10%;
     }
 
     .portfolio h2 {
+        font-size: 2.6rem;
         text-align: center;
-        font-size: 2.5rem;
-        color: #d63384;
+        color: var(--rosa4);
         margin-bottom: 40px;
     }
 
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 30px;
+        gap: 35px;
     }
 
     .card {
-        background: white;
+        background: var(--blanco);
+        padding: 18px;
         border-radius: 20px;
-        padding: 15px;
         text-align: center;
-        box-shadow: 0 8px 20px rgba(255, 150, 200, 0.3);
-        transition: 0.3s;
+        box-shadow: 0 10px 25px rgba(255, 130, 185, 0.35);
+        transition: 0.35s;
         cursor: pointer;
     }
 
@@ -197,57 +200,59 @@
     }
 
     .card img {
-        width: 100%;
         border-radius: 15px;
+        width: 100%;
     }
 
-    /* ==== CONTACTO ==== */
+    .btn-small {
+        margin-top: 12px;
+        border: none;
+        padding: 10px 20px;
+        background: var(--rosa3);
+        color: var(--blanco);
+        border-radius: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-small:hover {
+        background: var(--rosa4);
+        transform: translateY(-3px);
+    }
+
+    /* ================= CONTACTO ================= */
     .contacto {
-        padding: 100px 10%;
+        padding: 120px 10%;
         text-align: center;
     }
 
-    .contacto h2 {
-        font-size: 2.5rem;
-        color: #d63384;
-        margin-bottom: 30px;
-    }
-
-    input, textarea {
+    .contacto input,
+    .contacto textarea {
         width: 100%;
-        padding: 12px;
-        border-radius: 12px;
-        border: 1px solid #ff9ece;
+        padding: 14px;
+        border-radius: 14px;
+        border: 1px solid var(--rosa3);
+        background: #fff5fb;
         margin-bottom: 15px;
-        background: #fff5fa;
-    }
-
-    textarea {
-        height: 120px;
-        resize: none;
     }
 
     .social a {
         margin: 10px;
-        color: #ff4dbc;
+        color: var(--rosa4);
         text-decoration: none;
         font-weight: 600;
-        transition: 0.3s;
     }
 
-    .social a:hover {
-        color: #ff128a;
-    }
-
-    /* ==== FOOTER ==== */
+    /* ================= FOOTER ================= */
     footer {
+        background: var(--rosa3);
         padding: 20px;
         text-align: center;
-        background: #ffb6d9;
         color: white;
+        margin-top: 60px;
     }
 
-    /* ==== ANIMACIONES ==== */
+    /* ================= ANIMACIONES ================= */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -259,26 +264,8 @@
         100% { transform: translateY(0); }
     }
 
-    /* ==== RESPONSIVE ==== */
-    @media (max-width: 768px) {
-        .navbar {
-            padding: 15px 20px;
-        }
-
-        .menu a {
-            margin-left: 10px;
-        }
-
-        .hero-box {
-            padding: 30px;
-        }
-
-        .hero h1 {
-            font-size: 2.3rem;
-        }
-    }
-
     </style>
+
 </head>
 <body>
 
@@ -311,10 +298,9 @@
 
             <div class="texto">
                 <p>
-                    Soy <strong>Lucía</strong>, tengo <strong>15 años</strong> y me encanta expresarme mediante colores,
-                    diseños y creatividad.  
-                    Soy una persona <strong>muy creativa, empática y sensible</strong>.  
-                    Amo los <strong>perritos</strong>, la <strong>Navidad</strong> es mi época favorita y el <strong>sushi</strong> es lo mejor del mundo 🍣💗.
+                    Soy <strong>Lucía</strong>, tengo <strong>15 años</strong> y me encanta el diseño, lo aesthetic y todo lo creativo.
+                    Soy una persona <strong>empática, sensible y súper imaginativa</strong>.
+                    Amo los <strong>perros</strong>, la <strong>Navidad</strong> me hace feliz y el <strong>sushi</strong> es mi comida favorita del universo 🍣💗.
                 </p>
 
                 <div class="skills">
@@ -337,20 +323,21 @@
             <div class="card">
                 <img src="https://via.placeholder.com/400x250/ffcce7/ffffff" alt="">
                 <h3>Proyecto 1</h3>
+                <p>Diseño rosa pastel aesthetic.</p>
                 <button class="btn-small">Ver más</button>
             </div>
 
             <div class="card">
                 <img src="https://via.placeholder.com/400x250/ffb8df/ffffff" alt="">
                 <h3>Proyecto 2</h3>
-                <p>Un proyecto navideño mágico y lleno de brillo 🎄✨.</p>
+                <p>Proyecto navideño mágico 🎄✨.</p>
                 <button class="btn-small">Ver más</button>
             </div>
 
             <div class="card">
                 <img src="https://via.placeholder.com/400x250/fdd2ea/ffffff" alt="">
                 <h3>Proyecto 3</h3>
-                <p>Galería con fotos adorables de mis animalitos favoritos 🐶💗.</p>
+                <p>Galería adorable de animalitos 🐶.</p>
                 <button class="btn-small">Ver más</button>
             </div>
 
@@ -369,10 +356,10 @@
         <h2>Contacto</h2>
 
         <form>
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu correo" required>
-            <textarea placeholder="Escribe tu mensaje..." required></textarea>
-            <button class="btn" type="submit">Enviar</button>
+            <input type="text" placeholder="Tu nombre">
+            <input type="email" placeholder="Tu correo">
+            <textarea placeholder="Escribe tu mensaje..."></textarea>
+            <button class="btn">Enviar</button>
         </form>
 
         <div class="social">
@@ -387,4 +374,3 @@
 
 </body>
 </html>
-
