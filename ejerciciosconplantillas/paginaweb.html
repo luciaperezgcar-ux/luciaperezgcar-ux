@@ -50,7 +50,7 @@
     }
 
     .menu a {
-        margin-left: 25px;
+        margin-left: 25px];
         text-decoration: none;
         font-weight: 600;
         color: var(--rosa4);
@@ -135,13 +135,22 @@
         align-items: center;
     }
 
+    /* Imagen pequeña corregida */
     .foto {
         width: 330px;
+        height: 330px;
         border-radius: 25px;
         box-shadow: 0 10px 25px rgba(255, 120, 190, 0.5);
         animation: float 4s infinite ease-in-out;
         object-fit: cover;
-        height: 330px;
+    }
+
+    .foto-pequena {
+        width: 230px !important;
+        height: 230px !important;
+        border-radius: 22px;
+        object-fit: cover;
+        box-shadow: 0 10px 25px rgba(255, 120, 190, 0.4);
     }
 
     .texto p {
@@ -290,7 +299,9 @@
         <h2>Sobre mí</h2>
 
         <div class="sobre-contenido">
-            <img src="imagenes/fotohermana.jpg" alt="Con mi hermana">
+
+            <!-- IMAGEN PEQUEÑA CORREGIDA -->
+            <img class="foto foto-pequena" src="imagenes/fotohermana.jpg" alt="Con mi hermana">
 
             <div class="texto">
                 <p>
@@ -315,7 +326,6 @@
 
         <div class="grid">
 
-            <!-- Navidad -->
             <div class="card">
                 <img src="imagenes/fotonavidad.jpeg">
                 <h3>Navidad Mágica</h3>
@@ -323,7 +333,6 @@
                 <button class="btn-small">Ver más</button>
             </div>
 
-            <!-- Perros -->
             <div class="card">
                 <img src="imagenes/perronavidad.jpeg">
                 <h3>Perritos Felices</h3>
@@ -331,7 +340,6 @@
                 <button class="btn-small">Ver más</button>
             </div>
 
-            <!-- Sushi -->
             <div class="card">
                 <img src="imagenes/sushi.jpeg">
                 <h3>Sushi Aesthetic</h3>
